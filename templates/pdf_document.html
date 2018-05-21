@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Mini ERP</title>
+    <link rel="STYLESHEET" type="text/css" href="basic.css">
+    <link rel="STYLESHEET" type="text/css" href="bulma.css">
+    <link rel="STYLESHEET" type="text/css" href="font-awesome.min.css">
+  </head>
+  <body>
+    <script src="jquery.js"></script>
+    <script src="pdf_document.js"></script>
+    {% if is_order %}
+    <div id="align_order_button" style="text-align:center;">
+      <a class="button is-link" align="center">
+        <span class="icon is-small">
+          <i class="fa fa-envelope-o"></i>
+        </span>
+        <span>
+          Lähetä tilaus sähköpostilla
+        </span>
+      </a>
+      <input type="hidden" id="order_no" name="{{ order_no }}">
+    </div>
+    {% endif %}
+    <object id="pdf_document" height="auto" data="{{ link }}" type="application/pdf" alt="Dokumenttia ei ole lisää:"></object> 
+    {% if not document_exists and not is_order%}
+    <div class="pdf-upload">
+      <form action="pdf_insert.php" method="post" enctype="multipart/form-data">
+        <div class="file" style="float:left;">
+          <label class="file-label">
+            <input type="file" class="file-input" name="pdf_input" id="pdf_input" accept="application/pdf"/>
+            <span class="file-cta">
+              <span class="file-icon">
+                <i class="fa fa-upload"></i>
+              </span>
+              <span class="file-label">
+                Valitse tiedosto...
+              </span>
+            </span>
+          </label>
+        </div>
+        <input type="hidden" name="id" id="id" value="{{ id }}" />
+        <input style="float:left; margin-left: 10px;" class="button" type="submit" name="add_pdf" id="add_pdf" value="Lisää PDF" />
+      </form>
+    </div>
+    {% endif %}
+  </body>
+</html>

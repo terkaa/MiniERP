@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UFT-8" />
+    <title>Pictures</title>
+
+    <style type="text/css">
+     #pictures li {
+       float:left;
+       height:85px;
+       list-style:none outside;
+       width:110px;
+       text-align:center;
+     }
+     img {
+       border:0;
+       outline:none;
+     }
+    </style>
+  </head>
+  <body>
+    <script src="jquery.js"></script>
+    <script src="gallery.js"></script>
+    <ul id="pictures">
+      {% for item in pics %}
+      <li><a id="pic_link" class="pic_link" name="{{ item.id }}" href="/"><img src="./pics/thumbs/{{ item.file }}" alt="no pic"></img></a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

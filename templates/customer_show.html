@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Customer</title>
+        <link rel="STYLESHEET" type="text/css" href="basic.css">
+    </head>
+    <body>
+    <script src="jquery.js"></script>
+    <script src="customer_show.js"></script>
+    <div id="div_customer_show" style="text-align:center;">
+    <P>Asikas: {{ customer.c_id }}
+    <form action="/" method="post" enctype="multipart/form-data">
+    <Table border="0" align="center">
+    <tr><td><label for="c_name">Nimi:</label></td>
+    <td><input type="text" name="c_name" id="c_name" value="{{ customer.c_name }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="c_address">Osoite:</label></td>
+    <td><input type="text" name="c_address" id="c_address" value="{{ customer.c_address }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="c_postcode">Postinro:</label></td>
+    <td><input type="text" name="c_postcode" id="c_postcode" value="{{ customer.c_postcode }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="c_city">Paikkakunta:</label></td>
+    <td><input type="text" name="c_city" id="c_city" value="{{ customer.c_city }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="c_vat">LY-tunnus:</label></td>
+    <td><input type="text" name="c_vat" id="c_vat" value="{{customer.c_vat }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="c_contact">Ostajan nimi:</label></td>
+    <td><input type="text" name="c_contact" id="c_contact" value="{{ customer.c_contact }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="c_email">Sähkposti:</label></td>
+    <td><input type="text" name="c_email" id="c_email" value="{{ customer.c_email }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="c_delivery_way">Toimtapa:</label></td>
+    <td><input type="text" name="c_delivery_way" id="c_delivery_way" value="{{ customer.c_delivery_way }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="c_delivery_cust_no">Rahtisopimus nro:</label></td>
+    <td><input type="text" name="c_delivery_custno" id="c_delivery_custno" value="{{ customer.c_delivery_custno}}" {{ disabled }}></input></td></tr>
+    </table><br><br>
+    <input type="submit" id="submit_customer" value="Lisaa Asiakas" {{ disabled }}></input>
+    </form>
+    </div>
+    </body>
+</html>

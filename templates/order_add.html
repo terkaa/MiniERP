@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>My Webpage</title>
+    <link rel="STYLESHEET" type="text/css" href="basic.css">
+    <link rel="STYLESHEET" type="text/css" href="bulma.css">
+    <link rel="stylesheet" href="./calendar/datepicker.css">
+  </head>
+  <body>
+    <script src="jquery.js"></script>
+    <script src="order_add.js"></script>
+    <script src="./calendar/datepicker.min.js"></script>
+    <div id="div_order_add">
+      <form action="/" method="post" enctype="multipart/form-data">
+        <div class="field" >
+          <label class="label" for="order_id">Tilaus ID</label></td>
+          <div class="control" >
+            <input class="input" type="text" name="order_id" id="order_id" value="{{ order_id }}"></input>
+          </div>
+        </div>
+        <div class="field" >
+          <label class="label" for="customer">Asiakas</label></td>
+          <div class="control" >
+            <select class="select" id="customer">
+              {% for item in list %}
+              <option value="{{ item.id }}">{{ item.name }}</option>
+              {% endfor %}
+              <option id="customer_add" value="">Lisää Uusi</option>
+            </select>
+          </div>
+        </div>
+        <div class="field" >
+          <label class="label" for="id">Osan ID</label>
+          <div class="control" >
+            <input class="input" type="text" name="product_id" id="product_id"></input>
+          </div>
+        </div>
+        <!-- <form action="/"> -->
+          <input class="button" type="submit" id="add_product" value="Lisää uusi" disabled />
+          <div class="field" >
+            <label class="label" for="amount">Maara</label>
+            <div class="control" >
+              <input class="input" type="text" name="amount" id="amount"></input>
+            </div>
+          </div>
+          <div class="field" >
+            <label class="label" for="date_ordered">Tilattu PVM</label>
+            <div class="control" >
+              <input class="input" type="text" name="date_ordered" id="date_ordered" readonly></input>
+            </div>
+          </div>
+          <div class="field" >
+            <label class="label" for="">Toimitus PVM</label>
+            <div class="control" >
+              <input class="input" type="text" name="date_wanted" id="date_wanted" readonly></input>
+            </div>
+          </div>
+          <input type="hidden" name="customer_id" id="customer_id" value="{{ customer_id }}"></input>
+          <input class="button" type="submit" id="submit_order" value="Lisää Tilaus"></input>
+          <!-- </form> -->
+      </form>
+        <P><span id="warning"></span></P>
+        <iframe style="width:100%;height:500px" id="order_listed" src="" frameBorder="0"></iframe>
+    </div>
+  </body>
+</html>

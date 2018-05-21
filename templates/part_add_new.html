@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Mini ERP</title>
+        <link rel="STYLESHEET" type="text/css" href="basic.css">
+        </head>
+    <body>
+    <script src="jquery.js"></script>
+    <script src="part_add_new.js"></script>
+    <div id="div_product_add" style="text-align:center;">
+    <P>Lisää Komponentti:</P>
+    <form action="/" method="post" enctype="multipart/form-data">
+    <Table border="0" align="center">
+    <tr><td><label for="desc">Kuvaus:</label></td>
+    <td><input type="text" name="desc" id="desc"></input>*</td></tr>
+    <tr><td><label for="id_code">Koodi:</label></td>
+    <td><input type="text" name="id_code" id="id_code" value="{{ product_id }}"></input>*</td></tr>
+    <tr><td><label for="base_size">Perusmäärä:</label></td>
+    <td><input type="text" name="base_size" id="base_size"></input></td></tr>
+    <tr><td><label for="unit">Laatu:</label></td>
+    <td><input type="text" name="unit" id="unit"></input></td></tr>
+    <tr><td><label for="price">Hinta:</label></td>
+    <td><input type="text" name="price" id="price"></input></td></tr>
+    </table><br><br>
+    <input type="hidden" name="id" id="id" value="{{ id }}"></input>
+    <input type="hidden" name="main_type" id="main_type" value="{{ main_type }}"></input>
+    <input type="submit" id="submit_component" value="Lisää Komponentti"></input>
+    </form>
+    <P><span id="warning"></span></P>
+    <div id="div-continue" style="display:none">
+    <input type="submit" id="part_add_continue" value="Jatka"></input>
+    </div>
+    <iframe style="width:100%;height:500px" id="part_details" src="" frameBorder="0"></iframe>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Mini ERP</title>
+    <link rel="STYLESHEET" type="text/css" href="basic.css">
+    <link rel="STYLESHEET" type="text/css" href="bulma.css">
+    <link rel="STYLESHEET" type="text/css" href="../webfonts/css/font-awesome.min.css">
+  </head>
+  <body class="disable-scroll">
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
+    <div class="header-div" >
+      <h1 class="company-title title">{{ company_details.name }}</h1>
+      <div class="title-container">
+        <div class="arc-background" ></div>
+      </div>
+      <h1 class="app-title title">MiniERP</h1>
+      <h1 class="version-title title">v.1.0.0</h1>
+    </div>
+    <div class="actions columns">
+      <div class="column is-2">
+        <span class="icon gallery-link" id="gallery_link">
+          <i class="fa fa-picture-o"></i>
+        </span>
+      </div>
+      <ul class="column is-8">
+        <li id="div-actionbutton1" class="actionbutton">
+          <a id="action_link1" href="/"> Osalista <i class="actionicon fa fa-chevron-down" aria-hidden="true"></i></a>
+        </li>
+        <li id="div-actionbutton2" class="actionbutton">
+          <a id="action_link2" href="/"> Ostoskorit <i class="actionicon fa fa-chevron-down" aria-hidden="true"></i></a>
+        </li>
+        <li id="div-actionbutton3" class="actionbutton">
+          <a id="action_link3" href="/"> Saldot <i class="actionicon fa fa-chevron-down" aria-hidden="true"></i></a>
+        </li>
+        <li id="div-actionbutton4" class="actionbutton">
+          <a id="action_link4" href="/"> Pakkauslistat <i class="actionicon fa fa-chevron-down" aria-hidden="true"></i></a>
+        </li>
+        <li id="div-actionbutton5" class="actionbutton">
+          <a id="action_link5" href="/"> Työlistat <i class="actionicon fa fa-chevron-down" aria-hidden="true"></i></a>
+        </li>
+ 	<li id="div-actionbutton6" class="actionbutton">
+          <a id="action_link6" href="/"> Kellokortit <i class="actionicon fa fa-chevron-down" aria-hidden="true"></i></a>
+        </li>
+      </ul>
+      <div class="column is-2"></div>
+    </div>
+    <div id="div-main" class="columns main-content">
+
+      <div id="div-navipalkki" class="column is-2">
+        <div class="panel" >
+          <div id="div-navi_search" class="panel-block">
+            <p class="control has-icons-left">
+              <input class="input is-small" placeholder="Hae" type="text" size="6" id="find_product" name="find_product" autocomplete="off">
+              <span class="icon is-small is-left">
+                <i class="fa fa-search"></i>
+              </span>
+            </p>
+          </div>
+          <iframe id="navibar" src=""></iframe>
+        </div>
+      </div>
+
+      <div class="column is-8 content-div">
+        <div class="actionwindow-container column is-8">
+          <div id="div-actionwindow1" class="actionwindow">
+            <iframe id="actionwindow1" src="" width="100%"></iframe>
+          </div>
+          <div id="div-actionwindow5" class="actionwindow">
+            <iframe id="actionwindow5" src="" width="100%"></iframe>
+          </div>
+          <div id="div-actionwindow4" class="actionwindow">
+            <iframe id="actionwindow4" src="" width="100%"></iframe>
+          </div>
+          <div id="div-actionwindow3" class="actionwindow">
+            <iframe id="actionwindow3" src="" width="100%"></iframe>
+          </div>
+          <div id="div-actionwindow2" class="actionwindow">
+            <iframe id="actionwindow2" src="" width="100%"></iframe>
+          </div>
+          <div id="div-actionwindow6" class="actionwindow">
+            <iframe id="actionwindow6" src="" width="100%"></iframe>
+          </div>
+        </div>
+        <div class="part-info">
+          <span id="product_id" class="part-id">{{ id }}</span>
+          <span>Varastossa: <i id="id_stock_amount">{{ saldo }}</i> kpl</span>
+        </div>
+        <!-- Sisältö -->
+        <div id="div-tyotila">
+          <iframe id="work_space" src="" frameBorder="0" height="100%" width="100%"></iframe>
+        </div>
+        <!-- Sisältö -->
+      </div>
+
+      <div id="div-tilauspalkki" class="column is-2">
+        <div id="div-order_add">
+          <a class="button is-link add-order-button" id="order_add_button">
+            <span class="icon is-small">
+              <i class="fa fa-plus-circle"></i>
+            </span>
+            <span>Lisää tilaus</span>
+          </a>
+          <!-- <input class="button add-order-button is-link" type="submit" value="Lisää tilaus" id="order_add_button"> -->
+          <!-- <p>Tilaukset:</p> -->
+        </div>
+        <iframe id="orderbar" src="" frameBorder="0" width="100%" height="100%"></iframe>
+      </div>
+
+    </div>
+
+    <div class="footer-div"></div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Mini ERP</title>
+    <link rel="STYLESHEET" type="text/css" href="basic.css">
+    <link rel="STYLESHEET" type="text/css" href="bulma.css">
+    <link rel="STYLESHEET" type="text/css" href="font-awesome.min.css">
+  </head>
+  <body class="actionwindow-body disable-scroll">
+    <script src="jquery.js"></script>
+    <script src="exploded_list.js"></script>
+    <div class="actionwindow-content">
+    {% if id %}
+      <div class="actionwindow-actions" >
+      {% if dxf_exists %}
+        <a class="button is-link" id="dxf_open">
+          <span class="icon is-small">
+            <i class="fa fa-file-photo-o"></i>
+          </span>
+          <span>Avaa polttokuva</span>
+        </a>
+        {% else %}
+        <!-- <a href="/" id="dxf_add"> Lisää polttokuva </a> -->
+        <a class="button is-link" id="dxf_add">
+          <span class="icon is-small">
+            <i class="fa fa-plus-circle"></i>
+          </span>
+          <span>Lisää polttokuva</span>
+        </a>
+      {% endif %}
+      </div>
+      <table class="table is-bordered is-striped" >
+        <thead><TR><TH>N:</TH><TH>Komp_tyyppi:</TH><TH>Kuvaus:</TH><TH>Koodi:</TH><TH>Toimittaja:</TH><TH>Pak Koko:</TH><TH>Tilaa KPL</TH></TR></thead>
+        <tbody>
+        {% for item in parts %}
+        <TR><TD>{{ item.i }}</TD><TD>{{ item.part_desc }}</TD><TD id="kori_desc{{ item.i }}">{{ item.order_code }}</TD><TD>{{ item.code }}</TD><TD>{{ item.name }}</TD><TD>{{ item.lot }}{{ item.unit }}
+        </TD><TD><input type="text" id="amount{{ item.key }}" size="2" name="kori_maara" autocomplete="off" >
+          <input class="add_basket" type="submit" value="Tilaukselle" name="{{  item.key }}"></TD>
+        {% endfor %}
+        </TR>
+        </tbody>
+      </table>
+      <input type="hidden" name="id" id="id" value="{{ id }}"></input>
+      <input class="button" type="submit" id="add_part" value="Lisää komponentti"/>
+      {% else %}
+      <p>Ei tuotetta....</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

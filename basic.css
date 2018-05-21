@@ -1,0 +1,301 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+
+.disable-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-link i {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 20px;
+  color: hsl(217, 71%, 53%);
+  cursor: pointer;
+}
+
+.company-title {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: white !important;
+  text-shadow: 2px 2px black;
+}
+
+.title-container {
+  width: calc(100% - 365px);
+  height: 80px;
+  background: linear-gradient(to right, hsl(217, 71%, 53%), hsl(236, 53%, 40%));
+}
+
+/* Top bar graphics are created using CSS gradients and border radius */
+.arc-background {
+  width: 330px;
+  height: 150px;
+  background-color: #30389a;
+  moz-border-radius: 150px / 75px;
+	-webkit-border-radius: 150px / 75px;
+	border-radius: 150px / 75px;
+  position: absolute;
+  right: 200px;
+  clip: rect(0px, 330px, 80px, 165px);
+  border-right: 3px solid #202566;
+}
+
+.app-title {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  color: #808080 !important;
+  text-shadow: 1px 1px white;
+}
+
+.version-title {
+  position: absolute;
+  right: 30px;
+  top: 50px;
+  font-size: 15px !important;
+  color: #808080 !important;
+  text-shadow: 1px 1px white;
+}
+
+.header-div {
+  height: 80px;
+  width: 100%;
+  margin-bottom: 0px !important;
+  background: linear-gradient(to left, #cdcdcd 0px, white 250px);
+  /* background-color: hsl(217, 71%, 53%); */
+  /* background: linear-gradient(to right, hsl(217, 71%, 53%), hsl(236°, 53%, 40%)); */
+  color: white !important;
+}
+
+
+#div-main {
+  width: 100%;
+  height: calc(100% - 184px);
+  margin: 0 !important;
+}
+
+#div-tyotila {
+  height: 100%;
+}
+
+#div-tilauspalkki {
+  height: calc(100% - 46px);
+  margin-bottom: 0 !important;
+}
+
+.add-order-button {
+  width: calc(100% - 10px);
+  margin: 5px;
+}
+
+.footer-div {
+  width: 100%;
+  height: 62px;
+  /* background-color: hsl(217, 71%, 53%); */
+  background: linear-gradient(to right, hsl(217, 71%, 53%) , hsl(236, 53%, 40%));
+  padding: 0;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.column {
+  padding: 0 !important;
+}
+
+#div-navipalkki {
+  height: calc(100% - 45px);
+}
+
+#div-navipalkki .panel {
+  height: 100%;
+}
+
+#navibar {
+  height: 100%;
+  width: 100%;
+}
+
+.div-navi_search{
+  left:0;
+}
+
+
+.content-div {
+  height: 100%;
+}
+
+.actions {
+  height: 50px;
+  border-bottom: 1px solid hsl(217, 71%, 53%) !important;
+  margin: 0px !important;
+  -webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+  -moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+  box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+}
+
+.actions ul {
+  margin-left: 25px;
+}
+
+.actions li {
+  float: left;
+  height: 50px;
+  min-width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.part-info {
+  height: 80px;
+  float: right;
+  margin: 0px;
+  margin-right: 20px;
+}
+
+.part-info span{
+  display: block;
+  text-align: right;
+  margin: 0px;
+}
+
+.part-id {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
+.actionbutton.active {
+  background-color: hsl(0, 0%, 96%);
+  border-left: 1px solid hsl(217, 71%, 80%);
+  border-right: 1px solid hsl(217, 71%, 80%);
+}
+
+.actionwindow-container {
+  position: absolute;
+  width: 100%;
+}
+
+
+.actionwindow-content {
+  padding: 20px;
+  background-color: hsl(0, 0%, 96%);
+}
+
+.actionwindow-actions {
+  margin-bottom: 10px;
+}
+
+.actionwindow {
+  width: 100%;
+  height: 500px;
+  border: 1px solid hsl(217, 71%, 53%);
+  border-top: 0px;
+  background-color: hsl(0, 0%, 96%);
+  margin: 0px;
+  padding: 0px;
+  overflow-y: scroll;
+}
+
+.actionwindow iframe {
+}
+
+#div-toimintopalkki6 {
+  text-align:center;
+  background-color:lightblue;
+}
+
+#div-toimintoikkuna6 {
+  position:absolute;
+  top:82px;
+  left:0%;
+  height:auto;
+  min-height:100px;
+  width:auto;
+  min-width:200px;
+  text-align:left;
+  background-color:lightblue;
+  border-bottom: 3px coral solid;
+  border-left: 3px coral solid;
+  border-right: 3px coral solid;
+}
+
+#div-preview1 {
+  position:absolute;
+  top:222px;
+  left:18%;
+  height:auto;
+  width:150px;
+  text-align:left;
+  background-color:white;
+}
+
+#div-float_tip
+{
+  position:absolute;
+  top:0px;
+  right:0px;
+  width:100px;
+  height:100px;
+  display:none;
+  background-color:white;
+  z-index:15;
+}
+
+#div_order_add {
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#align_order_button {
+  margin: 10px;
+}
+
+.order-container {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.delivery-address {
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+
+#pdf_document {
+  width: calc(100% - 10px);
+}
+
+.pdf-upload {
+  max-width: 300px;
+  margin: auto;
+}
+
+.order-form-container {
+  margin: auto;
+  max-width: 450px;
+}
+
+.order-form-container field{
+  float: left;
+}
+.order-form-container .create-order{
+  float: right;
+  margin-top: -45px;
+}
+
+#small_pic {
+  border: 1px solid hsl(217, 71%, 53%);
+}

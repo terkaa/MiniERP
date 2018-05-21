@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Product</title>
+    <link rel="STYLESHEET" type="text/css" href="bulma.css">
+  </head>
+  <body>
+    <script src="jquery.js"></script>
+    <script src="picture.js"></script>
+    <p align="center"><img id="product_image" name="{{ id }}" src="./pics/{{ id }}.jpg" width="640" alt="Kuvaa ei ole lisää kuva:"></img></p>
+    {% if not picture_exists %}
+    <div align="center">
+      <form action="picture_insert.php" method="post" enctype="multipart/form-data">
+        <label for="picture_input">Valokuva:</label>
+        <input type="file" name="picture_input" id="picture_input" accept="image/jpeg"/><br><br>
+        <input type="hidden" name="id" id="id" value="{{ id }}" />
+        <input type="submit" name="add_picture" id="add_picture" value="Lisää Kuva" />
+      </form>
+    </div>
+    {% endif %}
+  </body>
+</html>

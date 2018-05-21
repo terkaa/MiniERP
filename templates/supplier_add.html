@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>My Webpage</title>
+        <link rel="STYLESHEET" type="text/css" href="basic.css">
+    </head>
+    <body>
+    <script src="jquery.js"></script>
+    <script src="supplier_add.js"></script>
+    <div id="div_supplier_add" style="text-align:center;">
+    <P>Lisää toimittaja:</P>
+    <form action="/" method="post" enctype="multipart/form-data">
+    <Table border="0" align="center">
+    <tr><td><label for="name">Nimi:</label></td>
+    <td><input type="text" name="name" id="name"></input>*</td></tr>
+    <tr><td><label for="address">Osoite:</label></td>
+    <td><input type="text" name="address" id="address"></input>*</td></tr>
+    <tr><td><label for="postcode">Postinro:</label></td>
+    <td><input type="text" name="postcode" id="postcode"></input>*</td></tr>
+    <tr><td><label for="c_city">Paikkakunta:</label></td>
+    <td><input type="text" name="city" id="city">*</input></td></tr>
+    <tr><td><label for="phone">Puh nro:</label></td>
+    <td><input type="text" name="phone" id="phone"></input></td></tr>
+    <tr><td><label for="email">Sähköposti:</label></td>
+    <td><input type="text" name="email" id="email"></input></td></tr>
+    <tr><td><label for="delivery_way">Toimtapa:</label></td>
+    <td><input type="text" name="delivery_way" id="delivery_way"></input></td></tr>
+    <tr><td><label for="deliveryterm">Toimitusehto:</label></td>
+    <td><input type="text" name="deliveryterm" id="deliveryterm"></input></td></tr>
+    <tr><td><label for="pay_days">Maksuehto pv:</label></td>
+    <td><input type="text" name="paydays" id="paydays"></input></td></tr>
+    </table><br><br>
+    <input type="hidden" name="part_id" id="part_id" value="{{ part_id }}"></input>
+    <input type="hidden" name="main_type" id="main_type" value="{{ main_type }}"></input>
+    <input type="hidden" name="id_code" id="id_code" value="{{ id_code }}"></input>
+    <input type="submit" id="submit_supplier" value="Lisaa Toimittaja"></input>
+    </form>
+    <P><span id="warning"></span></P>
+    <div id="div-continue" style="display:none">
+    <input type="submit" id="component_add_continue" value="Lisää tuote"></input>
+    </div>
+    <iframe style="width:100%;height:500px" id="supplier_details" src="" frameBorder="0"></iframe>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>My Webpage</title>
+        <link rel="STYLESHEET" type="text/css" href="basic.css">
+        </head>
+    <body>
+    <script src="jquery.js"></script>
+    <script src="product_add.js"></script>
+    <div id="div_product_add" style="text-align:center;">
+    <P>Lisää Tuote:</P>
+    <form action="/" method="post" enctype="multipart/form-data">
+    <Table border="0" align="center">
+    <tr><td><label for="id_code">Koodi:</label></td>
+    <td><input type="text" name="id_code" id="id_code" value="{{ product_id }}"></input>*</td></tr>
+    <tr><td><label for="desc">Kuvaus:</label></td>
+    <td><input type="text" name="desc" id="desc"></input>*</td></tr>
+    <tr><td><label for="weight">Paino:</label></td>
+    <td><input type="text" name="weight" id="weight"></input></td></tr>
+    <tr><td><label for="area">Pinta-ala:</label></td>
+    <td><input type="text" name="area" id="area"></input></td></tr>
+    <tr><td><label for="lot_size">Eräkoko:</label></td>
+    <td><input type="text" name="lot_size" id="lot_size"></input></td></tr>
+    <tr><td><label for="price">Hinta:</label></td>
+    <td><input type="text" name="price" id="price"></input></td></tr>
+    </table><br><br>
+    <input type="hidden" name="order_id" id="order_id" value="{{ order_id }}"></input>
+    <input type="hidden" name="customer_id" id="customer_id" value="{{ customer_id }}"></input>
+    <input type="submit" id="submit_product" value="Lisää Tuote"></input>
+    </form>
+    <P><span id="warning"></span></P>
+    <div id="div-continue" style="display:none">
+    <input type="submit" id="order_continue" value="Jatka tilausta"></input>
+    </div>
+    <iframe style="width:100%;height:500px" id="product_details" src="" frameBorder="0"></iframe>
+    </div>
+    </body>
+</html>

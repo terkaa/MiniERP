@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<link rel="STYLESHEET" type="text/css" href="basic.css">
+<link rel="STYLESHEET" type="text/css" href="bulma.css">
+<script src="jquery.js"></script>
+<script src="list.js"></script>
+{% for item in list %}
+<a class="panel-block {{ link_class }}" id="{{ item.no }}" name="{{ item.id }}" href="/">{{ item.id }}</a>
+{% endfor %}
+<div id="float-tip"  style="position: fixed;">
+  <img id="small_pic" src="" height="150px" width="200px" alt="">
+</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Mini ERP</title>
+        <link rel="STYLESHEET" type="text/css" href="basic.css">
+    </head>
+    <body>
+    <script src="jquery.js"></script>
+    <script src="part_add.js"></script>
+    <div id="div_part_add" style="text-align:center;"> 
+    <P>Lisää komponentti</P>
+    <form action="/" method="post" enctype="multipart/form-data">
+    <Table border="0" align="center">
+    <tr><td>Tyyppi:</td>
+    <td><select id="type">
+    {% for item in main_types %}
+    <option value="{{ item.id }}">{{ item.desc }}</option>
+    {% endfor %}
+    </select></td></tr>
+    <input type="hidden" name="id" id="id" value="{{ id }}"></input>
+    </form>
+    </table> 
+    <P><span id="warning"></span></P>
+    <iframe style="width:100%;height:500px" id="parts_listed" src="" frameBorder="0"></iframe>
+    </div>
+    </body>
+</html>

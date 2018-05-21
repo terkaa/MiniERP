@@ -1,0 +1,25 @@
+TODO **updated 05/01/2018 +**
+
+-- Finish UI update 
+-- Add product timetables of works and deliveries
+-- Add more comments
+
+
+Features updated:
+
+-- Added clockcard code 
+-- Added work calendar code 
+-- Added copy of working database file to folder db
+-- Cleaned up database name, table names and removed unneeded tables
+-- UI update started
+-- Added some comments
+-- Upload JPEG, DXF and PDF files to server added
+-- Fixed dxf_to_pdf code
+-- Added components input
+-- Added customer details input
+-- Added order input
+-- Added gallery
+-- Added order_list
+-- Added product list
+-- Transition to Twig started
+-- Removed mysqli* style database functions --> PDO

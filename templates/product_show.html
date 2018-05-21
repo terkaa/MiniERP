@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Customer</title>
+        <link rel="STYLESHEET" type="text/css" href="basic.css">
+    </head>
+    <body>
+    <script src="jquery.js"></script>
+    <script src="product_show.js"></script>
+    <div id="div_product_show" style="text-align:center;">
+    <P>Tuote {{ product.id_code }}
+    <form action="/" method="post" enctype="multipart/form-data">
+    <Table border="0" align="center">
+    <tr><td><label for="id_code">Koodi:</label></td>
+    <td><input type="text" name="id_code" id="id_code" value="{{ product.id_code }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="desc">Kuvaus:</label></td>
+    <td><input type="text" name="desc" id="desc" value="{{ product.desc }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="weight">Paino:</label></td>
+    <td><input type="text" name="weight" id="weight" value="{{ product.weight }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="area">Pinta-ala:</label></td>
+    <td><input type="text" name="area" id="area" value="{{ product.area }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="lot_size">Eräkoko:</label></td>
+    <td><input type="text" name="lot_size" id="lot_size" value="{{ product.lot_size }}" {{ disabled }}></input></td></tr>
+    <tr><td><label for="price">Hinta:</label></td>
+    <td><input type="text" name="price" id="price" value="{{ product.price }}" {{ disabled }}></input></td></tr>
+    </table><br><br>
+    <input type="submit" id="submit_product" value="Lisaa Tuote" {{ disabled }}></input>
+    </form>
+    </div>
+    </body>
+</html>

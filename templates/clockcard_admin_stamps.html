@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Mini ERP</title>
+        <link rel="STYLESHEET" type="text/css" href="basic.css">
+    </head>
+    <body>
+    <script src="jquery.js"></script>
+    <script src="clockcard_admin_stamps.js"></script>
+    <div id="div_get_stamps" style="text-align:center;"> 
+    <P>Hallinnnoi tietoja:</P>
+    <Table border="0" align="center">
+    <tr><th>Nimi:</th><th>Uusi Nimi:</th><th>Poista leimaukset:</th></tr>
+    {% for item in employees %}
+    <tr><td>{{ item.name }}</td><td><input type="text" id="name{{ item.key_id }}" class="name" name="{{ item.key_id }}"></td>
+    <td><input type="submit" value="Poista kaikki leimaukset" id="delete{{ item.key_id }}" class="delete" name="{{ item.key_id }}"></td></tr>
+    {% endfor %}
+    </table><br><br>
+    <a href="./clockcard_get_stamps.php"> Takaisin </a>
+    </div>
+    </body>
+</html>

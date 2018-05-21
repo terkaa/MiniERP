@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Order</title>
+    <link rel="STYLESHEET" type="text/css" href="basic.css">
+    <link rel="STYLESHEET" type="text/css" href="bulma.css">
+  </head>
+  <body>
+    <script src="jquery.js"></script>
+    <script src="order.js"></script>
+    <div class="order-container">
+      <h2 class="title">{{ order_details.order_id }}</h2>
+      <h3 class="subtitle">Tilaus PVM: {{ order_details.order_date }}</h3>
+      <table class="table is-bordered is-striped">
+        <thead>
+          <tr>
+            <th>POS:</th>
+            <th>ID:</th>
+            <th>Kuvaus:</th>
+            <th>Haluttu:</th>
+            <th>Toimitettu:</th>
+            <th>KPL:</th>
+            <th>A Varasto:</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in order_row %}
+          <tr>
+            <td>{{ order.pos }}</td>
+            <td><a class="product_link" id="product_link" name="{{ order.pc_id_code }}" href="/"> {{ order.pc_id_code }} </a></td>
+            <td width="60">{{ order.descript }}</td>
+            <td>{{ order.date_wanted }}</td>
+            <td align="center">{{ order.date_sent }}</td>
+            <td>{{ order.pcs }}</td>
+            <td>{{ order.c_warehouse }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% if all_rows_sent %}
+      <form action="arkistoi.php"><input type="submit" value="Laskutettu / Arkistoi"><input type="hidden" name="order_id" value="{{ order_id }}"></form>
+      {% endif %}
+      Asiakasnumero <span id="customer_id">{{order_details.c_id }}</span>
+      <br><br>
+      <div>Toimitusosoite</div>
+      <ul class="delivery-address">
+        <li>{{ order_details.c_name }}</li>
+        <li>{{ order_details.c_address }}</li>
+        <li>{{ order_details.c_postcode }} {{ order_details.c_city }}</li>
+      </ul>
+      <div id="float-tip"  style="position: fixed;">
+        <img id="small_pic" src="" height="150px" width="200px">
+      </div>
+  </body>
+</html>

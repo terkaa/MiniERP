@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Mini ERP</title>
+        <link rel="STYLESHEET" type="text/css" href="track.css">
+    </head>
+    <body>
+    <script src="jquery.js"></script>
+    <script src="clockcard_get_stamps_employee.js"></script>
+    <div id="main-stamps" style="text-align:center;height:500">
+    <p>Tunnit yhteensä:<span id="total_time">00</span>
+    <table border="1" align="center">
+    {% set first = 0 %}
+    <tr><th>Päivä:</th><th>Alkoi:</th><th>Päättyi:</th><th>Kesto</th></tr><tr>
+    {% for item in stamps %}
+    {% if item.at_work %}
+    {% set first = 1 %}
+    {% endif %}
+    {% if first %}
+    {% if item.at_work %} 
+    <td id="weekday{{item.no}}"><p><span id="weekdays{{item.no}}" class="weekdays">{{item.no}}###################</span></td><td id="start{{item.no}}" class="time-start">{{ item.time }}</td>
+    {% else %}
+    <td id="end{{item.no}}" class="time-end">{{ item.time }}</td>
+    {% endif %}
+    {% if not item.at_work %} 
+    <td id="time_diff{{item.no}}"><p><span id="time-diff{{item.no}}" class="time-diff">{{item.no}}</span></td>
+    </tr>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+    </table>
+    </div>
+    </body>
+</html>

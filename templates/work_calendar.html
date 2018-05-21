@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+  <title>Mini ERP</title>
+  <link rel="STYLESHEET" type="text/css" href="basic.css">
+
+</head>
+
+<script src="./jquery.js"></script>
+<script src="work_calendar.js"></script>
+<div class="actionwindow-content">
+<h1><span id="id_code">{{ id }}</span></h1>
+<TABLE BORDER="1"><TR><TH>Day:</TH>
+{% for machine in machines %} 
+<TH bgcolor="white">{{ machine.name }} {{ machine.type }}</TH>
+{% endfor %}
+</TR><TR>
+{% set td_no = 0 %}
+{% for item in days %}
+<TD>{{ item.day }}</TD>
+{% for machine in machines%}
+<TD id="work_loaded_id{{ td_no }}"  name="1" bgcolor="lightgreen">
+<select id="{{ td_no }}" class="work_selection" name="{{ list.item[loop.index].loaded }}" {{disable}}>
+</select>
+<input type="hidden" id="day{{ td_no }}" size="4" class="day" value="{{ item.day_sql }}"/>
+<input type="hidden" id="machine_no{{ td_no }}" size="4" class="machine" value="{{ loop.index -1}}"/>
+{% if  list.item[loop.index].loaded %}
+<font color="black">{{ list.item[0].key }}</font></TD>
+{% else %}
+<font color="lightgreen"><span class="event" id="work_id{{ td_no }}" name="{{ td_no }}" draggable="true"></span></font></TD>
+{% endif %}
+{% set td_no = td_no + 1 %}
+{% endfor %}	
+</TR><TR>
+{% endfor %}
+</TR>
+</TABLE>
+<div id="div-float_tip">
+<P>p
+</div>
+</div>
+</html>

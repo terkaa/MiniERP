@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Mini ERP</title>
+    <link rel="STYLESHEET" type="text/css" href="basic.css">
+    <link rel="STYLESHEET" type="text/css" href="bulma.css">
+  </head>
+  <body class="actionwindow-body disable-scroll">
+    <script src="jquery.js"></script>
+    <script src="balance.js"></script>
+    <div class="actionwindow-content" >
+      <table class="table is-bordered is-striped">
+        {% set prev_week = 0 %}
+        <thead>
+          <TR><TH>ID:</TH><TH>Varastossa:</TH><TH>Tilauksessa:</TH><TH>Saldo:</TH><TH>Toimitettava:</TH></TR>
+        </thead>
+        <tbody>
+          {% for item in balance %}
+          {% if prev_week != item.week %}
+          <TR><TD>Viikko {{ item.week }}</TD><TD>------------></TD><TD>-----------></TD><TD>-----------></TD><TD>-----------></TD></TR>
+          {% endif %}
+          <TR><TD><a class="balance_link" id="balance_link" name="{{ item.id }}" href="/"> {{ item.id }} </A></TD><TD width="60">{{ item.instock }}</TD><TD>{{ item.onorder }}</TD><TD>
+            {% if item.left < 0 %}
+            <span style="color:red">
+              {% else %}
+              <span style="color:black">
+                {% endif %}
+                {{ item.left }}</TD><TD>{{ item.date }}</TD></span></TR>
+            </span>
+            {% set prev_week = item.week %}
+            {% endfor %}
+        </tbody>
+      </table>
+      <table class="table is-bordered is-striped">
+        <TR><TH>ID:</TH><TH>Varastossa:</TH><TH>Tilauksessa:</TH><TH>Saldo:</TH></TR>
+        {% for item in balance2 %}
+        <TR><TD><a class="balance_link" id="balance_link" name="{{ item.id }}" href="/"> {{ item.id }} </A></TD><TD width="60">{{ item.instock }}</TD><TD>{{ item.onorder }}</TD><TD>
+          {% if item.left < 0 %}
+          <span style="color:red">
+            {% else %}
+            <span style="color:black">
+              {% endif %}
+              {{ item.left }}</span></TD></TR>
+        {% endfor %}
+      </table>
+      <div id="float-tip"  style="position: fixed;">
+        <img id="small_pic" src="" height="150px" width="200px" alt="no">
+      </div>
+    </div>
+  </body>
+</html>

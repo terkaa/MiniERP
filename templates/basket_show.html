@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Order</title>
+    <link rel="STYLESHEET" type="text/css" href="basic.css">
+    <link rel="STYLESHEET" type="text/css" href="bulma.css">
+  </head>
+  <body>
+    <script src="jquery.js"></script>
+    <script src="basket_show.js"></script>
+    <P align="center">Toimittaja:<br>{{ supplier_details.name }}<br>{{ supplier_details.address }}<br>{{ supplier_details.postcode }}
+      {{ supplier_details.city }}<br>{{ supplier_details.email }}
+      <TABLE class="table is-bordered is-striped" align="center">
+        <thead>
+          <TR><TH>POS:</TH><TH>Koodi:</TH><TH>Kuvaus:</TH><TH>Määrä:</TH><TH>Poista:</TH></TR>
+        </thead>
+        <tbody>
+          {% for item in basket_row %}
+          <TR>
+            <TD>{{ item.pos }}</TD>
+            <TD>{{ item.code }}</TD>
+            <TD>{{ item.desc }}</TD>
+            <TD>{{ item.amount }} {{ item.unit }}</TD>
+            <TD align="center"><a class="delete" name="{{ item.key }}"></a></TD>
+          </TR>
+          {% endfor %}
+        </tbody>
+      </TABLE>
+      <div class="order-form-container" >
+        <form action="/">
+          <div class="field" >
+            <label class="label" for="customer">Toimitusaika</label></td>
+            <div class="control" >
+              <select class="select" id="time">
+                <option value="7">1 viikko</option>
+                <option value="1">Huomenna</option>
+                <option value="14">2 viikkoa</option>
+                <option value="21">3 viikkoa</option>
+              </select>
+            </div>
+          </div>
+          <input type="hidden" id="supplier_id" name="{{ supplier_details.id }}">
+          <input class="button create-order" id="basket_order" type="submit" input value="Muodosta tilaus">
+        </form>
+      </div>
+  </body>
+</html>
